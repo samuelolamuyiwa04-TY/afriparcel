@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFRIPARCEL | Delivering Across Africa, Faster and Smarter</title>
+    
+    <!-- Preconnect to speed up external redirects and resources -->
+    <link rel="preconnect" href="https://wa.me">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        :root {
+            --primary: #0A2F1F;
+            --accent: #D4AF37;
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: var(--black);
+            overflow-x: hidden;
+            /* Prevent flash of unstyled content */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .bg-deep-green { background-color: var(--primary); }
+        .text-gold { color: var(--accent); }
+        .bg-gold { background-color: var(--accent); }
+        .border-gold { border-color: var(--accent); }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #0A2F1F 0%, #000000 100%);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px); /* Reduced for snappier feel */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .map-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(212, 175, 55, 0.7); }
+            100% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+        }
+
+        .ghost-number {
+            font-size: 8rem;
+            font-weight: 800;
+            color: rgba(10, 47, 31, 0.05);
+            line-height: 1;
+        }
+        
+        .topographic-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10C30 10 30 30 50 30S70 10 90 10M10 50C30 50 30 70 50 70S70 50 90 50M10 90C30 90 30 110 50 110S70 90 90 90' stroke='%23D4AF37' stroke-opacity='0.05' fill='none'/%3E%3C/svg%3E");
+        }
+
+        .logo-img {
+            max-height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-deep-green/90 backdrop-blur-md border-b border-white/10 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center">
+                    <img src="images/afriparcel.svg" alt="AFRIPARCEL Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8 text-white/80 font-medium">
+                <a href="#services" class="hover:text-gold transition">Services</a>
+                <a href="#why-us" class="hover:text-gold transition">Why Us</a>
+                <a href="#coverage" class="hover:text-gold transition">Coverage</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:+233243853148" target="_blank" class="hidden lg:flex items-center text-gold font-semibold">
+                    <i data-lucide="phone" class="w-4 h-4 mr-2"></i> Support
+                </a>
+                <a href="https://web.facebook.com/profile.php?id=61583731950303" target="_blank" class="bg-gold text-deep-green px-6 py-2 rounded-full font-bold hover:bg-white transition">Contact Us On Facebook</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="reveal">
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                    Moving West Africa <span class="text-gold">Faster.</span><br>
+                    Scaling Smarter.
+                </h1>
+                <p class="text-xl text-white/70 mb-10 max-w-lg leading-relaxed">
+                    Premium freight and seamless cross-border logistics designed for the modern African enterprise. From bulk cargo to e-commerce fulfillment, we bridge the gap between borders.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+
+                    <!-- WhatsApp Link optimized with preconnect -->
+                    <a href="https://wa.me/+233243853148" target="_blank" rel="noopener" class="border-2 border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center hover:bg-white/10 transition">
+                        <i class="fab fa-whatsapp text-2xl mr-3"></i> Chat with an Agent
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="relative hidden lg:block reveal" style="transition-delay: 200ms;">
+                <div class="relative w-full aspect-square flex items-center justify-center">
+                    <svg viewBox="0 0 500 500" class="w-full h-full opacity-40">
+                        <path fill="#D4AF37" d="M150,150 Q250,50 350,150 T450,350 Q350,450 150,450 T50,250 Z" opacity="0.1"/>
+                        <path d="M120,100 L180,80 L250,110 L300,180 L320,300 L250,420 L150,400 L80,250 Z" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="5,5"/>
+                    </svg>
+                    <div class="map-dot pulse top-1/4 left-1/4"></div>
+                    <div class="map-dot pulse top-1/2 left-1/3"></div>
+                    <div class="map-dot pulse bottom-1/4 left-1/2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gold/5 blur-[120px] rounded-full translate-x-1/2"></div>
+    </section>
+
+    <!-- Trust Strip -->
+    <div class="bg-black py-8 border-y border-white/5">
+        <div class="container mx-auto px-6 flex flex-wrap justify-between items-center gap-8">
+            <span class="text-white/40 font-semibold uppercase tracking-widest text-sm">Trusted by businesses across West Africa</span>
+            <div class="flex flex-wrap gap-8 lg:gap-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-gold text-2xl font-bold">96.7%</span>
+                    <span class="text-white/60 text-xs leading-none uppercase">On-Time<br>Rate</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-gold text-2xl font-bold">12</span>
+                    <span class="text-white/60 text-xs leading-none uppercase">Countries<br>Active</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-gold text-2xl font-bold">2,500+</span>
+                    <span class="text-white/60 text-xs leading-none uppercase">Business<br>Partners</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-gold font-bold uppercase tracking-widest text-sm">Our Solutions</span>
+                <h2 class="text-4xl font-bold mt-4 mb-6">Logistics Excellence for Every Scale</h2>
+                <div class="h-1 w-20 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-8 rounded-3xl reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-deep-green text-gold rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="plane" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cargo Shipping</h3>
+                    <p class="text-gray-500">Secure air and sea freight solutions for high-value goods.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-deep-green text-gold rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="truck" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Freight Transport</h3>
+                    <p class="text-gray-500">Reliable haulage and trucking for heavy machinery and materials.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl reveal" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 bg-deep-green text-gold rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="map-pin" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cross-Border</h3>
+                    <p class="text-gray-500">Seamless customs clearing and last-mile delivery across borders.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl reveal" style="transition-delay: 400ms;">
+                    <div class="w-14 h-14 bg-deep-green text-gold rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="package-check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Bulk Movement</h3>
+                    <p class="text-gray-500">Optimized supply chain logistics for manufacturers and distributors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section id="why-us" class="py-24 bg-gray-50 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <span class="text-gold font-bold uppercase tracking-widest text-sm">The Afriparcel Edge</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8">Why the Best in West Africa Choose Us</h2>
+                    
+                    <div class="space-y-12">
+                        <div class="flex items-start group">
+                            <span class="ghost-number absolute -mt-4 opacity-5 group-hover:opacity-10 transition">01</span>
+                            <div class="relative z-10 ml-4">
+                                <h4 class="text-xl font-bold mb-2">Unmatched Regional Speed</h4>
+                                <p class="text-gray-600">We optimize routes using local intelligence to ensure your cargo avoids common border bottlenecks.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start group">
+                            <span class="ghost-number absolute -mt-4 opacity-5 group-hover:opacity-10 transition">02</span>
+                            <div class="relative z-10 ml-4">
+                                <h4 class="text-xl font-bold mb-2">Transparent Pricing</h4>
+                                <p class="text-gray-600">No hidden "border fees" or surprise levies. Get premium logistics at rates that keep you profitable.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start group">
+                            <span class="ghost-number absolute -mt-4 opacity-5 group-hover:opacity-10 transition">03</span>
+                            <div class="relative z-10 ml-4">
+                                <h4 class="text-xl font-bold mb-2">Absolute Reliability</h4>
+                                <p class="text-gray-600">With real-time tracking and dedicated account managers, you never have to guess where your investment is.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl">
+                        <!-- Added loading="lazy" for better performance -->
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" loading="lazy" alt="Logistics Warehouse" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-deep-green p-8 rounded-2xl shadow-xl text-white">
+                        <p class="text-3xl font-bold text-gold">24/7</p>
+                        <p class="text-sm font-medium opacity-70 uppercase tracking-tighter">Support Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Africa Coverage Section -->
+    <section id="coverage" class="py-24 bg-deep-green text-white relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="reveal">
+                <h2 class="text-4xl font-bold mb-6">Your Gateway to West Africa’s Markets</h2>
+                <p class="text-white/60 max-w-2xl mx-auto mb-12">
+                    We’ve built a robust network connecting Nigeria, Ghana, Sierra Leone, and beyond. Connecting businesses across borders, effortlessly.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-3 mb-16 reveal">
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-gold hover:text-deep-green transition cursor-default">Nigeria</span>
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-gold hover:text-deep-green transition cursor-default">Ghana</span>
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-gold hover:text-deep-green transition cursor-default">Sierra Leone</span>
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-gold hover:text-deep-green transition cursor-default">Liberia</span>
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-gold hover:text-deep-green transition cursor-default">Cameroon</span>
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-gold hover:text-deep-green transition cursor-default">Côte d’Ivoire</span>
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-gold hover:text-deep-green transition cursor-default">Benin Republic</span>
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-gold hover:text-deep-green transition cursor-default">Togo</span>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-t border-white/10 reveal">
+                <div>
+                    <h3 class="text-4xl font-bold text-gold mb-2">100k+</h3>
+                    <p class="text-sm text-white/50 uppercase">Tons Moved</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-gold mb-2">12</h3>
+                    <p class="text-sm text-white/50 uppercase">Trade Corridors</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-gold mb-2">100%</h3>
+                    <p class="text-sm text-white/50 uppercase">Secure Delivery</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-gold mb-2">0</h3>
+                    <p class="text-sm text-white/50 uppercase">Lost Shipments</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 opacity-20 topographic-bg pointer-events-none"></div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold">What Our Partners Say</h2>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl border border-gray-100 reveal" style="transition-delay: 100ms;">
+                    <i class="fas fa-quote-left text-gold text-3xl mb-6"></i>
+                    <p class="text-gray-700 italic mb-8">"Shipping from Lagos to Accra used to be a nightmare of delays. With Afriparcel, my stock arrives in 48 hours. They are the backbone of my brand."</p>
+                    <div>
+                        <p class="font-bold">Chidi K.</p>
+                        <p class="text-sm text-gray-400">CEO of K-Electronics</p>
+                    </div>
+                </div>
+                <div class="p-8 rounded-3xl border border-gray-100 reveal" style="transition-delay: 200ms;">
+                    <i class="fas fa-quote-left text-gold text-3xl mb-6"></i>
+                    <p class="text-gray-700 italic mb-8">"Finally, a logistics company that understands corporate timelines. Their clearing process is the fastest I’ve experienced in 10 years of trading."</p>
+                    <div>
+                        <p class="font-bold">Fatou B.</p>
+                        <p class="text-sm text-gray-400">Import Manager</p>
+                    </div>
+                </div>
+                <div class="p-8 rounded-3xl border border-gray-100 reveal" style="transition-delay: 300ms;">
+                    <i class="fas fa-quote-left text-gold text-3xl mb-6"></i>
+                    <p class="text-gray-700 italic mb-8">"Moving raw materials across the Sahel is tough. Afriparcel handles our bulk haulage with zero fuss and total transparency."</p>
+                    <div>
+                        <p class="font-bold">Amara O.</p>
+                        <p class="text-sm text-gray-400">Operations Lead</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="bg-gold rounded-[3rem] p-12 lg:p-20 text-center relative overflow-hidden reveal">
+                <div class="relative z-10">
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-deep-green mb-6">Ready to Move? Let’s Get Your Cargo in Motion.</h2>
+                    <p class="text-deep-green/80 text-xl mb-12 max-w-2xl mx-auto">Stop worrying about borders. Start focusing on growth. Our agents are standing by to give you a custom quote.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="mailto:afriparcellogistics@outlook.com" target="_blank" rel="noopener"  class="bg-deep-green text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition">
+                            Speak to a Specialist
+                        </a>
+                        <a href="https://wa.me/+233243853148" target="_blank" rel="noopener" class="bg-white text-deep-green px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center hover:scale-105 transition">
+                            <i class="fab fa-whatsapp mr-2 text-2xl"></i> Message us on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="/images/afriparcel.svg" alt="AFRIPARCEL Logo" class="logo-img">
+                    </div>
+                    <p class="text-white/50 max-w-sm mb-6">
+                        Delivering Across Africa, Faster and Smarter. Premium logistics solutions for businesses ready to scale.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://vm.tiktok.com/ZS9RUs8VtwACj-DTTYY/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-black transition"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61583731950303" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-black transition"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">Contact Us</h4>
+                    <ul class="space-y-4 text-white/60">
+                        <li class="flex items-start">
+                            <i data-lucide="phone" class="w-5 h-5 mr-3 text-gold"></i>
+                            +233 24 385 3148
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-gold"></i>
+                            afriparcellogistics@outlook.com
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 mr-3 text-gold"></i>
+                            Ghana
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">Quick Links</h4>
+                    <ul class="space-y-4 text-white/60">
+                        <li><a href="#" class="hover:text-gold transition">Track Shipment</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Our Coverage</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-white/30 text-sm">
+                <p>&copy; 2024 Afriparcel Logistics. All rights reserved.</p>
+                <p>Built for African Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Optimization: Run as soon as DOM is ready, don't wait for images
+        function initApp() {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            
+            const observerOptions = { threshold: 0.05 }; // More sensitive for faster reveal
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
